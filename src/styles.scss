@@ -1,0 +1,24 @@
+@import 'tailwindcss';
+@import "app/styles/typo";
+
+:root {
+  --background: #F9F9F9;
+  --black: #0C0C0C;
+  --primary: #2F83B2;
+  --primary-400: #2F83B2;
+  --primary-500: #07689F;
+  --primary-600: #043E5F;
+  --white: #FFFFFF;
+  --gray-100: #F9F9F9;
+  --gray-200: #EFEFEF;
+  --gray-300: #D9D9D9;
+  --gray-400: #A6A6A6;
+  --gray-500: #565656;
+  --error-light: #EA0205;
+  --error-dark: #A80102;
+  --alert: #FDFF83;
+  --accent: #FF6C01;
+  --success-light: #E8F5E4;
+  --success-dark: #4C9839;
+}
+
