@@ -1,0 +1,39 @@
+<div *ngIf='titleText'>
+  <p class='body-xs'>{{titleText}}</p>
+</div>
+<div class="relative h-full"
+     [style.height]='height'
+     [style.width]='width'
+     [ngClass]="this.getContainerStyleByTheme()"
+>
+  <div *ngIf="isShowPrefixIcon" class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
+    <app-icon [name]='prefixIcon' [fill]='prefixIconColor' [size]='iconSize' strokeWidth='1'></app-icon>
+  </div>
+  <input
+    #input
+    class="block w-full border sm:text-sm sm:leading-6 h-full"
+    [type]="type"
+    placeholder="{{placeholder}}"
+    [disabled]="disabled"
+    [(ngModel)]="value"
+    (input)="onChange(value)"
+    [style.border-color]="borderColor"
+    [style.border-radius]="borderRadius"
+    [style.background-color]="backgroundColor"
+    [ngClass]="[
+      isShowSuffixIcon ? 'pl-8 pr-2' : paddingX,
+			isShowPrefixIcon ? 'pr-8 pl-2' : paddingX,
+			paddingY,
+			(error && hightlightOnError) ? 'error' : '',
+			this.getInputStyleByTheme().join(' '),
+			placeHolderItalic ? 'placeholder-italic' : ''
+		]"
+  >
+  <div *ngIf="isShowSuffixIcon" class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
+    <app-icon [name]='suffixIcon' [fill]='suffixIconColor' [size]='iconSize' strokeWidth='1'></app-icon>
+  </div>
+</div>
+<div *ngIf='infoText'>
+  <p class='subtitle-s'>{{infoText}}</p>
+</div>
+

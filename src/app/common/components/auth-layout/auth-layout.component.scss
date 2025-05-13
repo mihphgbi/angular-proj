@@ -1,0 +1,32 @@
+.auth-wrapper {
+  display: flex;
+  height: calc(100vh - 108px);
+
+  .auth-container {
+    margin: auto;
+    padding: 52px;
+    border: 1px solid var(--gray-400);
+    background-color: var(--gray-200);
+    border-radius: 16px;
+    max-width: 1200px;
+    display: flex;
+    gap: 100px;
+
+    .auth-intro-img {
+      img {
+        min-width: 416px;
+        max-height: 500px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .auth-container {
+      gap: 0;
+
+      .auth-intro-img {
+        display: none;
+      }
+    }
+  }
+}

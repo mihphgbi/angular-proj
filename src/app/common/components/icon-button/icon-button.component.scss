@@ -1,0 +1,21 @@
+.icon-button {
+  background: var(--secondary-button-bg);
+
+  @apply ease-in-out duration-300 cursor-pointer;
+
+  &:hover {
+    background: var(--secondary-button-hover-bg);
+  }
+
+  &:disabled {
+    @apply cursor-not-allowed;
+
+    background: var(--button-disabled-bg);
+
+    &:hover {
+      background: var(--button-disabled-bg);
+    }
+  }
+
+
+}

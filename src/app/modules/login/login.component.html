@@ -1,0 +1,40 @@
+<div class='login-container'>
+  <form>
+    <div class='login-form'>
+      <div class='flex flex-col gap-4'>
+        <h5>Login</h5>
+        <p class='subtitle-s'>Login to access yourEasyset24 account</p>
+      </div>
+
+      <label for='email'>
+        <p class='body-s py-1'>Email</p>
+        <app-input-field id='email' name='email' height='48px' placeholder='easyset24@gmail.com' paddingX='8' />
+      </label>
+
+      <label for='password'>
+        <p class='body-s py-1'>Password</p>
+        <app-input-field id='password'
+                         name='password'
+                         [type]='isShowPassword ? "text":"password"'
+                         height='48px'
+                         [isShowSuffixIcon]="true"
+                         suffixIconColor='var(--gray-500)'
+                         [suffixIcon]='isShowPassword?"PreviewOpen" : "PreviewCloseOne"'/>
+      </label>
+      
+      <div class='flex justify-between content-center'>
+        <div>
+          <p class='body-s'>Remember Me</p>
+        </div>
+        <a href='#' class='body-s text-primary-500'>Forgot Password?</a>
+      </div>
+
+      <app-button label='Login' labelSize='xl' />
+
+      <p class='body-s text-center'>Or</p>
+
+      <div></div>
+    </div>
+  </form>
+
+</div>

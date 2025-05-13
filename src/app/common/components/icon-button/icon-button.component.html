@@ -1,1 +1,10 @@
-<p>icon-button works!</p>
+<button [type]="type" class="icon-button h-full rounded-md cursor-pointer" (click)="onClick($event)" [disabled]="disabled">
+  <!--	Default w-10 as width and h-10 as height -->
+  <div class="flex flex-row items-center cursor-pointer">
+    <app-icon [name]='name' [fill]='iconColor' [size]='size'></app-icon>
+    <span *ngIf="text" class="pr-4">
+			{{ text }}
+		</span>
+  </div>
+
+</button>

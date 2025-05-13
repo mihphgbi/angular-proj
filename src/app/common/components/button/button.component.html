@@ -1,0 +1,37 @@
+<div class='relative'>
+  <div *ngIf="prefixIconClass"
+       class="pointer-events-none absolute inset-y-0 left-0 flex items-center px-2">
+		<span class="sm:text-sm">
+			<div [style.background-color]="prefixIconColor"
+           [ngClass]="[prefixIconClass || '', prefixIconColorClass || '']"
+           class="w-4 h-4"
+           style='mask-size: contain'
+      ></div>
+		</span>
+  </div>
+  <button
+    [type]="type"
+    [disabled]="disabled"
+    (click)="handleClick()"
+    [style.width]='width'
+    [style.height]='height'
+    [style.background-color]='backgroundColor'
+    class="app-button px-4 py-2 rounded-sm relative cursor-pointer"
+  >
+    <p class='text-white'
+       [ngClass]="'button-'+labelSize"
+       [style.color]='labelColor'>
+      {{ label }}
+    </p>
+  </button>
+  <div *ngIf="suffixIconClass"
+       class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
+		<span class="sm:text-sm">
+			<div [style.background-color]="suffixIconColor"
+           [ngClass]="[suffixIconClass || '', suffixIconColorClass || '']"
+           class="w-4 h-4"
+           style='mask-size: contain'
+      ></div>
+		</span>
+  </div>
+</div>
