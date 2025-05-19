@@ -1,0 +1,61 @@
+<div class='register-container'>
+  <form>
+    <div class='register-form'>
+      <div class='flex flex-col gap-4'>
+        <h5>Register</h5>
+        <div class='flex gap-[50px]'>
+          <label for='first-name'>
+            <p class='body-s py-1'>First name</p>
+            <app-input-field id='first-name' name='first-name' height='48px' placeholder='Easyset24' />
+          </label>
+
+          <label for='last-name'>
+            <p class='body-s py-1'>Last name</p>
+            <app-input-field id='last-name' name='last-name' height='48px' placeholder='Easyset24' />
+          </label>
+        </div>
+      </div>
+
+      <div class='flex flex-col gap-4'>
+        <label for='email'>
+          <p class='body-s py-1'>Email</p>
+          <app-input-field id='email' name='email' height='48px' placeholder='easyset24@gmail.com' />
+        </label>
+        <label for='password'>
+          <p class='body-s py-1'>Password</p>
+          <app-input-field id='password'
+                           name='password'
+                           [type]='isShowPassword ? "text":"password"'
+                           height='48px'
+                           [isShowSuffixIcon]="true"
+                           suffixIconColor='var(--gray-500)'
+                           [suffixIcon]='isShowPassword?"PreviewOpen" : "PreviewCloseOne"'/>
+        </label>
+
+        <label for='confirm-password'>
+          <p class='body-s py-1'>Confirm password</p>
+          <app-input-field id='confirm-password'
+                           name='confirm-password'
+                           [type]='isShowPassword ? "text":"password"'
+                           height='48px'
+                           [isShowSuffixIcon]="true"
+                           suffixIconColor='var(--gray-500)'
+                           [suffixIcon]='isShowPassword?"PreviewOpen" : "PreviewCloseOne"'/>
+        </label>
+      </div>
+    </div>
+
+    <div class='py-2 flex justify-between content-center'>
+      <p class='body-s'>I agree to all the Terms and Privacy Policies</p>
+    </div>
+
+    <div class='flex gap-3 flex-col'>
+      <app-button label='Register Now' labelSize='xl' />
+      <p class='body-s text-center'>Already have an account? Login</p>
+      <p class='body-s text-center'>Or</p>
+      <div></div>
+
+    </div>
+  </form>
+
+</div>

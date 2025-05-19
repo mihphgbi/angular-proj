@@ -1,6 +1,7 @@
 import {Routes} from "@angular/router";
 import {NotfoundComponent} from "./common/components/notfound/notfound.component";
 import {AuthLayoutComponent} from './common/components/auth-layout/auth-layout.component';
+import {RegisterModule} from './modules/register/register.module';
 
 
 export const routes: Routes = [
@@ -18,11 +19,11 @@ export const routes: Routes = [
         loadChildren: () => import("./modules/login/login.module").then(m => m.LoginModule),
         data: {}
       },
-      // {
-      //   path: "register",
-      //   loadChildren: () => import("./common/components/login/login.component").then(m => m.LoginComponent),
-      //   data: {}
-      // },
+      {
+        path: "register",
+        loadChildren: () => import("./modules/register/register.module").then(m => m.RegisterModule),
+        data: {}
+      },
     ]
   },
   {path: "**", component: NotfoundComponent},

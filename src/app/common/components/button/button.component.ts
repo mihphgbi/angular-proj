@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {LabelSize} from '../../types/ui.types';
+import {LabelSize} from '../../constants/ui.constans';
 import {CommonModule} from '@angular/common';
 
 @Component({
