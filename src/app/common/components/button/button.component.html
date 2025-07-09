@@ -11,16 +11,18 @@
   </div>
   <button
     [type]="type"
+    [style]="style"
     [disabled]="disabled"
     (click)="handleClick()"
     [style.width]='width'
     [style.height]='height'
-    [style.background-color]='backgroundColor'
+    [style.background-color]="outlined? '' : backgroundColor"
+    [style.border]="outlined ? ('1px solid ' + borderColor) : ''"
     class="app-button px-4 py-2 rounded-sm relative cursor-pointer"
+	[ngClass]="{outlined: !outlined,class: !!class}"
   >
-    <p class='text-white'
-       [ngClass]="'button-'+labelSize"
-       [style.color]='labelColor'>
+    <p [ngClass]="'button-'+labelSize"
+       [style.color]="labelColor">
       {{ label }}
     </p>
   </button>

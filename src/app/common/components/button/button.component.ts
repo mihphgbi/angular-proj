@@ -11,13 +11,17 @@ import {CommonModule} from '@angular/common';
 })
 export class ButtonComponent {
   @Input() type: string = 'button';
+  @Input() class: string = '';
+  @Input() style: string = '';
   @Input() label: string = '';
   @Input() disabled: boolean = false;
   @Input() width?: string = '100%';
   @Input() height?: string = '48px';
   @Input() backgroundColor?: string = 'var(--primary-500)';
+  @Input() outlined?: boolean = false;
+  @Input() borderColor?: string = "var(--primary-500)";
   @Input() placeholder?: string;
-  @Input() labelColor?: string = 'var(--white)';
+  @Input() labelColor?: string = "";
   @Input() labelSize?: LabelSize = 'm';
   @Input() prefixIconClass?: string;
   @Input() prefixIconColorClass?: string;
@@ -28,7 +32,11 @@ export class ButtonComponent {
 
   @Output() clicked = new EventEmitter<void>();
 
-
+  ngOnChanges() {
+    if (!this.labelColor) {
+      this.labelColor = !this.outlined ? 'var(--white)' : 'var(--primary-500)';
+    }
+  }
 
   handleClick(): void {
     if (!this.disabled) {

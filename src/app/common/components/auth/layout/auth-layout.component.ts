@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import {HeaderComponent} from '../header/header.component';
-import {LoginComponent} from '../../../modules/login/login.component';
+import {AuthHeaderComponent} from '../header/auth-header.component';
+import {LoginComponent} from '../../../../modules/login/login.component';
 import {CommonModule} from '@angular/common';
 import {RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-auth-layout',
-  imports: [HeaderComponent,LoginComponent,CommonModule,RouterOutlet],
+  imports: [AuthHeaderComponent,LoginComponent,CommonModule,RouterOutlet],
   templateUrl: './auth-layout.component.html',
   styleUrl: './auth-layout.component.scss',
   standalone: true
